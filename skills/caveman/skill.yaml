@@ -1,0 +1,21 @@
+id: caveman
+title: Caveman
+status: adapted
+summary: Compress output and reduce filler while preserving exact technical substance.
+upstream:
+  repo: JuliusBrussee/caveman
+  url: https://github.com/JuliusBrussee/caveman
+  path: skills/caveman
+  commit: ef6050c5e1848b6880ff47c32ade1a608a64f85e
+  license: MIT
+adaptation:
+  owner: skill-vault
+  changes:
+    - Kept only the core compression skill.
+    - Removed repo-specific plugin, hook, installer, and stats concerns.
+    - Normalized for multi-environment distribution from one canonical source.
+targets:
+  - codex
+  - claude-code
+  - opencode
+  - antigravity
