@@ -1,0 +1,11 @@
+skills:
+  - id: caveman
+    title: Caveman
+    summary: Compress agent output while keeping technical accuracy.
+    path: skills/caveman
+    status: adapted
+    targets:
+      - codex
+      - claude-code
+      - opencode
+      - antigravity
