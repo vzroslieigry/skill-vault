@@ -19,4 +19,5 @@ targets:
   - codex
   - claude-code
   - opencode
+  - openclaw
   - antigravity

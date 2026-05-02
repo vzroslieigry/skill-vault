@@ -6,7 +6,7 @@ Public library of adapted agent skills, kept in one canonical form and published
 
 - Keep useful third-party skills in one clean public repository.
 - Adapt them for our workflow without carrying upstream repo clutter.
-- Publish install-ready folders for `Codex`, `Claude Code`, `OpenCode`, and `Antigravity`.
+- Publish install-ready folders for `Codex`, `Claude Code`, `OpenCode`, `OpenClaw`, and `Antigravity`.
 
 If you want a skill to use immediately, start in `dist/`.
 If you want the canonical source we maintain, start in `skills/`.
@@ -22,7 +22,7 @@ If you want the canonical source we maintain, start in `skills/`.
 
 | ID | What it does | Status | Targets |
 |---|---|---|---|
-| `caveman` | Compresses agent output while keeping technical accuracy | adapted | Codex, Claude Code, OpenCode, Antigravity |
+| `caveman` | Compresses agent output while keeping technical accuracy | adapted | Codex, Claude Code, OpenCode, OpenClaw, Antigravity |
 
 ## Repository Layout
 
@@ -40,7 +40,8 @@ Pick the folder that matches your environment and copy the skill directory as-is
 
 - Codex: `dist/codex/skills/<skill-name>/` -> `~/.codex/skills/<skill-name>/`
 - Claude Code: `dist/claude-code/.claude/skills/<skill-name>/` -> `~/.claude/skills/<skill-name>/`
-- OpenCode: `dist/opencode/.opencode/skills/<skill-name>/` -> `.opencode/skills/<skill-name>/` or `~/.config/opencode/skills/<skill-name>/`
+- OpenCode: `dist/opencode/.opencode/skill/<skill-name>/` -> `.opencode/skill/<skill-name>/` or `~/.config/opencode/skill/<skill-name>/`
+- OpenClaw: `dist/openclaw/skills/<skill-name>/` -> `<workspace>/skills/<skill-name>/`
 - Antigravity: `dist/antigravity/.agents/skills/<skill-name>/` -> your workspace skill directory
 
 Current first skill:

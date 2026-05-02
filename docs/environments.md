@@ -2,6 +2,8 @@
 
 This library keeps one canonical skill and generates environment-specific copies.
 
+Target paths below follow the current official documentation reviewed on May 2, 2026.
+
 ## Codex
 
 - Canonical install style in this workspace: `~/.codex/skills/<skill-name>/SKILL.md`
@@ -14,9 +16,14 @@ This library keeps one canonical skill and generates environment-specific copies
 
 ## OpenCode
 
-- Supported paths include `.opencode/skills/<skill-name>/SKILL.md`
-- Claude-compatible `.claude/skills/` paths also work in OpenCode, but we publish a native OpenCode pack
-- Vault distribution path: `dist/opencode/.opencode/skills/<skill-name>/`
+- Supported native paths include `.opencode/skill/<skill-name>/SKILL.md` and `~/.config/opencode/skill/<skill-name>/SKILL.md`
+- Claude-compatible `.claude/skills/<skill-name>/SKILL.md` paths also work in OpenCode, but we publish a native OpenCode pack
+- Vault distribution path: `dist/opencode/.opencode/skill/<skill-name>/`
+
+## OpenClaw
+
+- Supported locations include `<workspace>/skills/<skill-name>/SKILL.md`, `<workspace>/.agents/skills/<skill-name>/SKILL.md`, `~/.agents/skills/<skill-name>/SKILL.md`, and `~/.openclaw/skills/<skill-name>/SKILL.md`
+- We publish a workspace-local OpenClaw pack at `dist/openclaw/skills/<skill-name>/`
 
 ## Antigravity
 

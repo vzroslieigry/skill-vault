@@ -11,7 +11,8 @@ DIST_DIR = ROOT / "dist"
 TARGETS = {
     "codex": DIST_DIR / "codex" / "skills",
     "claude-code": DIST_DIR / "claude-code" / ".claude" / "skills",
-    "opencode": DIST_DIR / "opencode" / ".opencode" / "skills",
+    "opencode": DIST_DIR / "opencode" / ".opencode" / "skill",
+    "openclaw": DIST_DIR / "openclaw" / "skills",
     "antigravity": DIST_DIR / "antigravity" / ".agents" / "skills",
 }
 
