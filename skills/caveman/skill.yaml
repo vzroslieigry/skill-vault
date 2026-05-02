@@ -11,9 +11,10 @@ upstream:
 adaptation:
   owner: skill-vault
   changes:
-    - Kept only the core compression skill.
-    - Removed repo-specific plugin, hook, installer, and stats concerns.
-    - Normalized for multi-environment distribution from one canonical source.
+    - Kept the portable caveman communication skill as the canonical source.
+    - Removed repo-specific plugin, hook, installer, stats, and companion-skill concerns.
+    - Normalized the skill for multi-environment distribution from one maintained source.
+    - Preserved activation guidance, intensity levels, examples, and safety fallback behavior.
 targets:
   - codex
   - claude-code

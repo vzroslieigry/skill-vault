@@ -1,18 +1,22 @@
 # Skill Vault
 
-Curated library of adapted agent skills for our own workflow.
+Public library of adapted agent skills, kept in one canonical form and published as ready-to-use packs for multiple agent environments.
 
-Goal:
-- Keep interesting third-party skills in one clean place.
-- Normalize them for our usage.
-- Publish ready-to-use packs for multiple environments without maintaining four unrelated copies by hand.
+## What This Repo Is For
+
+- Keep useful third-party skills in one clean public repository.
+- Adapt them for our workflow without carrying upstream repo clutter.
+- Publish install-ready folders for `Codex`, `Claude Code`, `OpenCode`, and `Antigravity`.
+
+If you want a skill to use immediately, start in `dist/`.
+If you want the canonical source we maintain, start in `skills/`.
 
 ## Principles
 
 - `skills/` is the source of truth.
-- `dist/` contains generated distributions for specific environments.
-- Every adapted skill keeps lightweight source metadata in `skill.yaml`.
-- We preserve the useful part of upstream skills and remove repo-specific noise that does not help our usage.
+- `dist/` contains generated install-ready distributions.
+- Each adapted skill records upstream source and license metadata in `skill.yaml`.
+- We keep the useful behavior and remove repo-specific noise that does not travel well between environments.
 
 ## Current Skills
 
@@ -23,50 +27,60 @@ Goal:
 ## Repository Layout
 
 ```text
-catalog/             Machine-readable index of the library
+catalog/             Machine-readable library index
 docs/                Human docs for environments and maintenance
-scripts/             Build and validation helpers
+scripts/             Build helpers
 skills/              Canonical adapted skills
-dist/                Generated target-specific packs
+dist/                Generated install-ready packs
 ```
 
-## Skill Workflow
+## Quick Start
 
-1. Find an upstream skill worth keeping.
-2. Add source metadata to `skills/<id>/skill.yaml`.
-3. Adapt the canonical `skills/<id>/SKILL.md` for our workflow.
-4. Run `python scripts/build.py`.
-5. Publish or copy the generated pack from `dist/`.
+Pick the folder that matches your environment and copy the skill directory as-is:
 
-## First Skill
+- Codex: `dist/codex/skills/<skill-name>/` -> `~/.codex/skills/<skill-name>/`
+- Claude Code: `dist/claude-code/.claude/skills/<skill-name>/` -> `~/.claude/skills/<skill-name>/`
+- OpenCode: `dist/opencode/.opencode/skills/<skill-name>/` -> `.opencode/skills/<skill-name>/` or `~/.config/opencode/skills/<skill-name>/`
+- Antigravity: `dist/antigravity/.agents/skills/<skill-name>/` -> your workspace skill directory
+
+Current first skill:
+
+- `caveman`
+
+## First Skill: Caveman
 
 `caveman` started from:
+
 - upstream repo: `JuliusBrussee/caveman`
 - upstream path: `skills/caveman`
 
-Our adaptation keeps the core behavior only:
-- concise response mode
-- compression rules
-- safety fallback for ambiguous or destructive situations
+This repository keeps the portable skill itself and strips out repo-bound extras that are not required to use the skill across different agent runtimes.
 
-Removed from the first-pass library version:
-- repo-specific hooks
+Kept in the vault version:
+
+- persistent concise-response mode
+- intensity levels
+- compression rules
+- ambiguity and safety fallback behavior
+- examples and activation guidance
+
+Deliberately removed from the public vault copy:
+
 - installer logic
+- repo-specific hooks
 - stats helpers
 - plugin wrappers
-- extra companion skills
+- unrelated companion skills
 
-## Quick Build
+## Maintaining The Vault
+
+1. Add or update `skills/<id>/SKILL.md`.
+2. Record source metadata in `skills/<id>/skill.yaml`.
+3. Rebuild distributions.
+4. Commit both canonical and generated output.
 
 ```powershell
 python .\scripts\build.py
 ```
 
-## Install Notes
-
-- Codex: copy `dist/codex/skills/<skill-name>` into `~/.codex/skills/`
-- Claude Code: copy `dist/claude-code/.claude/skills/<skill-name>` into `~/.claude/skills/`
-- OpenCode: copy `dist/opencode/.opencode/skills/<skill-name>` into `.opencode/skills/` or `~/.config/opencode/skills/`
-- Antigravity: copy `dist/antigravity/.agents/skills/<skill-name>` into your workspace skill directory
-
-See [docs/environments.md](docs/environments.md) for the current target notes and caveats.
+See [docs/environments.md](docs/environments.md) for environment-specific notes.
